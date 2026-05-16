@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Training outputs (large — don't commit)
+outputs/
+runs/
+wandb/
+checkpoints/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# CleanRL
+cleanrl/
+

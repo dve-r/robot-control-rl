@@ -1,0 +1,21 @@
+{
+  "experiment": "reward_sparse_sac",
+  "algorithm": "SAC",
+  "reward_type": "sparse",
+  "env_id": "FetchPushFlat-v0",
+  "success_rate": 0.97,
+  "mean_episode_return": -14.1,
+  "mean_episode_length": 50.0,
+  "mean_energy": 0.7848055362701416,
+  "total_timesteps": 0,
+  "training_wall_time_minutes": 0.0,
+  "n_eval_episodes": 100,
+  "domain_randomization": {
+    "object_mass_multiplier": 1.0,
+    "friction_multiplier": 1.5,
+    "object_size_multiplier": 1.0
+  },
+  "hardware": "unknown",
+  "seed": 42,
+  "notes": ""
+}
