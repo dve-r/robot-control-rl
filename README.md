@@ -41,15 +41,8 @@ Even with HER, algorithm choice is critical. DDPG proved completely incapable of
 
 ### 2. Reward Engineering: A Study in Reward Hacking
 I hypothesized that dense rewards would accelerate training. I designed two custom rewards:
-1. **Dense Energy:**
-```math
-r = -||g^a - g^d||_2 - \lambda_e ||a_{1:3}||_2^2
-```
-
-2. **Approach Progress:**
-```math
-r = -||p_{ee} - p_{obj}||_2 - ||g^a - g^d||_2 + \beta \Delta d_t
-```
+1. **Dense Energy:** Penalized the distance between the object and the goal, while also adding a penalty for large, erratic movements to encourage energy efficiency.
+2. **Approach Progress:** Penalized the distance between the robotic gripper and the object, combined with a reward for incremental progress toward the goal.
 
 **Result:** Both failed completely (~6% success). 
 **Insight:** This was caused by HER's relabeling mechanics. Because components like action penalties or gripper distances are not goal-recomputable, they became inconsistent between original and relabeled transitions. The agent exploited this by minimizing actions entirely (collapsing into paralysis) to avoid penalties rather than learning to push. 
